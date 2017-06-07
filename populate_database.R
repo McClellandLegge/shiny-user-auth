@@ -17,7 +17,7 @@ sendUserAddQuery <- function(user, password, email, role)
 }
 
 # initialize a connection, will create a db if not exists
-db <- dbConnect(SQLite(), dbname = 'authorization.sqlite')
+db <- dbConnect(SQLite(), dbname = database)
 
 # create the table for the logins
 dbClearResult(dbSendQuery(db, 'DROP TABLE IF EXISTS pw'))
@@ -25,9 +25,9 @@ dbClearResult(dbSendQuery(db, 'CREATE TABLE pw (user TEXT, password TEXT, email 
 
 # initialize a DT of some dummy logins
 db_logins <- data.table::data.table(
-  user = c('Augustin', 'Matt', 'Harvey'),
-  role = c('Manager', 'User', 'User'),
-  password = c('ABC', 'DEF', 'GHI')
+  user = c('Mac', 'Dan', 'Norbert'),
+  role = c('Consultant', 'Principal-Manager', 'Principal'),
+  password = rep("Welcome1", 3)
 )
 db_logins[, email := paste0(user, "@iriworldwide.com")]
 

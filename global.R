@@ -10,6 +10,7 @@ library("dplyr")
 # Global Variables --------------------------------------------------------
 
 app_name <- "User Auth"
+database <- "authorization.db"
 
 support_contact <- "McClelland.Legge@iriworldwide.com"
 
@@ -116,9 +117,9 @@ showConfirmModal <- function(id, ...) {
 
 
 # if the database hasn't been initialized, create it
-if (!file.exists("authorization.sqlite")) 
+if (!file.exists(database)) 
   source("populate_database.R", local = TRUE)
 
 # initialize a connection for the session -- a server observer will 
 # automatically close the connection for us upon exit
-db <- dbConnect(SQLite(), dbname = 'authorization.sqlite')
+db <- dbConnect(SQLite(), dbname = database)
