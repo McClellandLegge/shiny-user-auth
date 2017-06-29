@@ -12,7 +12,7 @@ library("dplyr")
 app_name <- "User Auth"
 database <- "authorization.db"
 
-support_contact <- "McClelland.Legge@iriworldwide.com"
+support_contact <- "Mac@me.com"
 
 forgot_password_message <- paste0(
   paste0("mailto:", support_contact, "?")

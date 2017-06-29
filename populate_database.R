@@ -29,7 +29,7 @@ db_logins <- data.table::data.table(
   role = c('Consultant', 'Principal-Manager', 'Principal'),
   password = rep("Welcome1", 3)
 )
-db_logins[, email := paste0(user, "@iriworldwide.com")]
+db_logins[, email := paste0(user, "@me.com")]
 
 # perform additions
 success <- db_logins[, mapply(sendUserAddQuery, user, password, email, role)]
