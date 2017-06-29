@@ -84,7 +84,7 @@ function(input, output, session) {
       , wellPanel(
         img(src = "avatar.png")
         , span(class = "h3", login$user)
-        , span("(", login$role, ")")
+        , p("(", login$role, ")")
         , tags$small(class = "text-muted", tolower(login$email))
         , actionLink("logout", "Logout")
         )
